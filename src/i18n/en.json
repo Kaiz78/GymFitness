@@ -7,9 +7,29 @@
       "name": "Amine Mokhtari",
       "msg_3": "A",
       "role": ["FullStack Developer", "Software Engineer","Project Manager", ""],
-
       "msg_4": "About",
       "msg_5": "Contact"
+    },
+    "navbar":{
+      "logo": "vite.svg",
+      "liste1": "eee",
+      "liste2": "eee",
+      "liste3": "eee",
+      "liste4": "eee",
+      "liste5": "eee"
+    },
+    "footer":{
+      "logo": "vite.svg",
+      "liste1": "eee",
+      "liste2": "eee",
+      "liste3": "eee",
+      "liste4": "eee",
+      "liste5": "eee",
+      "copyright": {
+        "msg_1": "Tous droits réservés",
+        "msg_2": "Logo",
+        "msg_3": "2024"
+      }
     },
     "about": {
       "title": "About",

@@ -1,7 +1,7 @@
 {
     "page" : {
       "home": {
-        "title": "Accueil",
+        "title": "Home",
         "msg_1": "Salut,",
         "msg_2": "Je m'appelle",
         "name": "Amine Mokhtari",
@@ -10,6 +10,27 @@
         "role": ["Développeur FullStack", "Ingénieur Logiciel","Chef de Projet",""],
         "msg_4": "A propos",
         "msg_5": "Contact"
+      },
+      "navbar":{
+        "logo": "vite.svg",
+        "liste1": "Accueil",
+        "liste2": "A propos",
+        "liste3": "Études",
+        "liste4": "Expériences",
+        "liste5": "Contact"
+      },
+      "footer":{
+        "logo": "vite.svg",
+        "liste1": "eee",
+        "liste2": "eee",
+        "liste3": "eee",
+        "liste4": "eee",
+        "liste5": "eee",
+        "copyright": {
+          "msg_1": "Tous droits réservés",
+          "msg_2": "Logo",
+          "msg_3": "2024"
+        }
       },
       "about": {
         "title": "A propos",

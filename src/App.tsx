@@ -7,9 +7,12 @@ import Involve from './pages/involve';
 import Resource from './pages/resource';
 import Donate from './pages/donate';
 import Navbar from './components/navbar';
+import Footer from './components/footer';
+import FormInput from './components/formInput';
+
+
 import './styles/index.scss';
 
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 
 
 
@@ -33,7 +36,9 @@ function App() {
         <Route path={`${ROUTE}/involve`}  element={<Involve />} />
         <Route path={`${ROUTE}/resource`}  element={<Resource />} />
         <Route path={`${ROUTE}/contact`}  element={<Contact />} />
+        <Route path={`${ROUTE}/test`}  element={<FormInput />} />
       </Routes>
+      {/* <Footer /> */}
       </HelmetProvider>
     </BrowserRouter>
 

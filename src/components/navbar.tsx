@@ -2,12 +2,16 @@ import LanguageSelector from "./languageSelector"
 import  {useState, useEffect} from 'react';
 import { Link } from "react-router-dom";
 
+import {translate} from "../i18n";
+import { RootState } from "../store/store";
+import { useSelector } from "react-redux";
+
 /**
  * Code DarkMode 
  * https://codesandbox.io/p/sandbox/create-dark-mode-in-react-js-using-redux-hooks-7xiqp?file=%2Fsrc%2FApp.js&from-embed=
 */
 
-export default function navbar() {
+export default function Navbar() {
 
   const [isNavOpen, setNavOpen] = useState(false);
 
@@ -24,45 +28,40 @@ export default function navbar() {
     });
   });
 
-  return (
-    <header className={`headerMain ${scroll ? "sticky" : ""}`}>
-      <nav className={`navbar navbar-expand-lg navbar-light${isNavOpen ? ' show' : ''}`}>        
-        <div className="container d-flex">
-          <Link to="/" className="navbar-brand">
-            <img src="logo.svg" alt="Logo" className="w-50" /> 
-          </Link>
+  const {language} = useSelector((state: RootState) => state.lang);  
+  let content = translate('page', language) as any
 
-          <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"  onClick={toggleNav}>
-            <span className="navbar-toggler-icon"></span>
-          </button>
+
+  return (
+    <header className={`headerMain ${scroll ? 'sticky top-0 bg-white shadow-lg' : ''}`}>
+      <nav className="container mx-auto px-4 py-3 flex justify-between items-center">
+        <h1 className="text-2xl font-bold text-gray-800">Gym Fitness</h1>
+        <button onClick={toggleNav} className="text-gray-800 block md:hidden">
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+          </svg>
+        </button>
+        
+        <div className={`hidden-md items-center text-center`}>
+          <a href="#home" className="text-gray-600 hover:text-gray-800 mx-2">Accueil</a>
+          <a href="#about" className="text-gray-600 hover:text-gray-800 mx-2">À propos</a>
+          <a href="#services" className="text-gray-600 hover:text-gray-800 mx-2">Services</a>
+          <a href="#testimonials" className="text-gray-600 hover:text-gray-800 mx-2">Témoignages</a>
+          <a href="#contact" className="text-gray-600 hover:text-gray-800 mx-2">Contact</a>
           
-          <div className={`collapse navbar-collapse  ${isNavOpen ? ' show text-center' : ''}`}id="navbarNav">
-            <ul className="navbar-nav mx-auto">
-              <li className="nav-item">
-                <Link to="/" className="nav-link">Accueil</Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/about" className="nav-link">À propos</Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/involve" className="nav-link">Implication</Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/donate" className="nav-link">Dons</Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/resource" className="nav-link">Ressource</Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/contact" className="nav-link">Contact</Link>
-              </li>
-            </ul>
-            <LanguageSelector />
-          </div>
+          <button><LanguageSelector /></button>
         </div>
       </nav>
 
-      
+      <div className={`${isNavOpen ? 'flex flex-col items-center' : 'hidden'} md:hidden`} >    
+      <a href="#home" className="text-gray-600 hover:text-gray-800 py-2">Accueil</a>
+          <a href="#about" className="text-gray-600 hover:text-gray-800 py-2">À propos</a>
+          <a href="#services" className="text-gray-600 hover:text-gray-800 py-2">Services</a>
+          <a href="#testimonials" className="text-gray-600 hover:text-gray-800 py-2">Témoignages</a>
+          <a href="#contact" className="text-gray-600 hover:text-gray-800 py-2">Contact</a>
+          <button className="mb-2"><LanguageSelector /></button>
+      </div>
     </header>
+
   )
 }

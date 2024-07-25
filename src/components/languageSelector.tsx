@@ -35,7 +35,7 @@ const LanguageSelector = () => {
   return (
     <>
     <div className="styledDropdown">
-      <div className="dropdownButton" onClick={toggleDropdown}>
+      <div className="dropdownButton text-md" onClick={toggleDropdown}>
         <Icon icon={selectedLanguage === "FR" ? "twemoji:flag-for-france" : "twemoji:flag-for-united-kingdom"} style={{ marginRight: "0.5rem" }} />
         {selectedLanguage.toUpperCase()}
       </div>

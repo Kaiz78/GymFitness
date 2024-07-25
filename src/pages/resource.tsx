@@ -2,7 +2,11 @@ import React from 'react'
 
 export default function resource() {
   return (
-    <div>
+    <div style={
+      {
+        minHeight: "90vh",
+      }
+    }>
       
     </div>
   )
