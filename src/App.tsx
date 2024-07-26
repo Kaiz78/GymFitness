@@ -7,7 +7,7 @@ import Involve from './pages/involve';
 import Resource from './pages/resource';
 import Donate from './pages/donate';
 import Navbar from './components/navbar';
-import Footer from './components/footer';
+// import Footer from './components/footer';
 import FormInput from './components/formInput';
 
 

@@ -1,6 +1,5 @@
 import LanguageSelector from "./languageSelector"
 import  {useState, useEffect} from 'react';
-import { Link } from "react-router-dom";
 
 import {translate} from "../i18n";
 import { RootState } from "../store/store";
@@ -31,7 +30,7 @@ export default function Navbar() {
   const {language} = useSelector((state: RootState) => state.lang);  
   let content = translate('page', language) as any
 
-
+  console.log(content)
   return (
     <header className={`headerMain ${scroll ? 'sticky top-0 bg-white shadow-lg' : ''}`}>
       <nav className="container mx-auto px-4 py-3 flex justify-between items-center">
